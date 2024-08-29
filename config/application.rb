@@ -39,6 +39,9 @@ module Frontend
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.assets.css_compressor = nil    
+    config.assets.css_compressor = nil 
+    
+    # Path within public/ where assets are compiled to
+    config.assets.prefix = "/assets/frontend"    
   end
 end
