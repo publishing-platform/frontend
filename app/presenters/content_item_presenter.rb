@@ -23,21 +23,21 @@ class ContentItemPresenter
     @schema_name = content_item["schema_name"]
     @phase = content_item["phase"]
     @document_type = content_item["document_type"]
-  end  
+  end
 
   def parsed_content_item
     content_item.parsed_content
-  end  
+  end
 
   def parent
     if content_item["links"].include?("parent")
       content_item["links"]["parent"][0]
     end
-  end  
+  end
 
   def content_id
     content_item["content_id"]
-  end  
+  end
 
   def web_url
     PublishingPlatformLocation.new.website_root + content_item["base_path"]
@@ -45,7 +45,7 @@ class ContentItemPresenter
 
   def canonical_url
     web_url
-  end  
+  end
 
   # The default behaviour to is honour the max_age
   # from the content-store response.
@@ -59,15 +59,15 @@ class ContentItemPresenter
 
   def show_phase_banner?
     phase.in?(%w[alpha beta])
-  end  
+  end
 
   def show_default_breadcrumbs?
     true
-  end  
+  end
 
 private
 
   def display_date(timestamp, format = "%-d %B %Y")
     I18n.l(Time.zone.parse(timestamp), format:, locale: "en") if timestamp
-  end  
+  end
 end

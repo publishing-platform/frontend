@@ -26,7 +26,7 @@ module Frontend
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -39,9 +39,9 @@ module Frontend
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.assets.css_compressor = nil 
-    
+    config.assets.css_compressor = nil
+
     # Path within public/ where assets are compiled to
-    config.assets.prefix = "/assets/frontend"    
+    config.assets.prefix = "/assets/frontend"
   end
 end

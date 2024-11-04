@@ -4,7 +4,7 @@ class ContentItemsController < ApplicationController
   rescue_from PublishingPlatformApi::HTTPGone, with: :error_410
   rescue_from PublishingPlatformApi::InvalidUrl, with: :error_notfound
   rescue_from ActionView::MissingTemplate, with: :error_406
-  rescue_from ActionController::UnknownFormat, with: :error_406  
+  rescue_from ActionController::UnknownFormat, with: :error_406
 
   attr_accessor :content_item
 
@@ -28,15 +28,15 @@ private
 
   def render_template
     render @content_item.schema_name
-  end  
+  end
 
   def set_expiry
     expires_in(
       @content_item.cache_control_max_age(request.format),
       public: @content_item.cache_control_public?,
     )
-  end 
-  
+  end
+
   def error_403(exception)
     render plain: exception.message, status: :forbidden
   end
@@ -51,5 +51,5 @@ private
 
   def error_410
     render plain: "Gone", status: :gone
-  end  
+  end
 end
