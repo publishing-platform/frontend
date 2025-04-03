@@ -17,6 +17,7 @@ gem "tzinfo-data", platforms: %i[mswin mswin64 mingw x64_mingw jruby]
 group :development, :test do
   gem "debug", platforms: %i[mri mswin mswin64 mingw x64_mingw]
   gem "publishing_platform_rubocop"
+  gem "publishing_platform_schemas"
   gem "publishing_platform_test"
   gem "rspec-rails"
 end
