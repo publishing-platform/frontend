@@ -5,6 +5,8 @@ class ContentItemsController < ApplicationController
   rescue_from PublishingPlatformApi::InvalidUrl, with: :error_notfound
   rescue_from ActionView::MissingTemplate, with: :error_406
   rescue_from ActionController::UnknownFormat, with: :error_406
+  rescue_from PresenterBuilder::RedirectRouteReturned, with: :error_redirect
+  rescue_from PresenterBuilder::SpecialRouteReturned, with: :error_notfound
 
   attr_accessor :content_item
 
@@ -51,5 +53,12 @@ private
 
   def error_410
     render plain: "Gone", status: :gone
+  end
+
+  def error_redirect(exception)
+    destination, status_code = PublishingPlatformApi::ContentStore.redirect_for_path(
+      exception.content_item, request.path, request.query_string
+    )
+    redirect_to destination, status: status_code, allow_other_host: true
   end
 end
