@@ -41,5 +41,5 @@ private
     end
   end
 
-  class SpecialRouteReturned < StandardError; end  
+  class SpecialRouteReturned < StandardError; end
 end
