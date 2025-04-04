@@ -7,6 +7,14 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 
+require "webmock/rspec"
+WebMock.disable_net_connect!(allow_localhost: true)
+
+require "publishing_platform_test"
+PublishingPlatformTest.configure
+
+require "publishing_platform_api/test_helpers/content_store"
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -56,4 +64,10 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include PresenterHelper
+  config.include PublishingPlatformApi::TestHelpers::ContentStore, type: ->(spec) { spec.in?(%i[system request]) }
+  config.include SystemSpecHelper, type: ->(spec) { spec.in?(%i[system request]) }
+
+  config.before(:each, type: :system) do
+    driven_by :headless_chrome
+  end
 end
