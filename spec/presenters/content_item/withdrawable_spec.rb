@@ -1,3 +1,4 @@
+# rubocop:disable Lint/DuplicateMethods
 require "rails_helper"
 
 RSpec.describe ContentItem::Withdrawable do
@@ -95,3 +96,4 @@ RSpec.describe ContentItem::Withdrawable do
     end
   end
 end
+# rubocop:enable Lint/DuplicateMethods
