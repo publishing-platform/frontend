@@ -4,7 +4,7 @@ RSpec.feature "Answer", type: :feature do
   scenario "visiting an answer page" do
     when_i_visit_an_answer_page
     then_i_see_the_page_title
-    and_i_see_the_page_content
+    and_i_see_the_page_body
   end
 
 private
@@ -17,7 +17,7 @@ private
     expect(page).to have_title("Test answer")
   end
 
-  def and_i_see_the_page_content
+  def and_i_see_the_page_body
     expect(page).to have_content("Test answer")
     expect(page).to have_content("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
   end
