@@ -1,4 +1,4 @@
-module SystemSpecHelper
+module FeatureSpecHelper
   def setup_and_visit_content_item(name, overrides = {}, parameter_string = "")
     content_item = PublishingPlatformSchemas::Example.find(name, example_name: name)
     content_item = content_item.deep_merge(overrides)
