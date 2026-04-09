@@ -213,7 +213,7 @@ GEM
       rubocop-rspec (= 3.9.0)
     publishing_platform_schemas (0.5.0)
       json-schema (>= 2.8, < 6.2)
-    publishing_platform_test (0.2.0)
+    publishing_platform_test (0.2.1)
       brakeman (>= 5.0.2)
       capybara (>= 3.36)
       puma
