@@ -54,10 +54,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4    
+        uses: actions/checkout@v6    
 
       - name: Checkout Publishing API (for Content Schemas)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: publishing-platform/publishing-api
           ref: main
