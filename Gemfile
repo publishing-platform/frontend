@@ -9,6 +9,7 @@ gem "jsbundling-rails"
 gem "publishing_platform_api_adapters"
 gem "publishing_platform_app_config"
 gem "publishing_platform_markdown"
+gem "publishing_platform_publishing_components"
 gem "sprockets-rails"
 gem "terser"
 gem "tzinfo-data", platforms: %i[mswin mswin64 mingw x64_mingw jruby]
