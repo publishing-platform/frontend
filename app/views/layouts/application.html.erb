@@ -1,38 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>
-      <% if content_for?(:title) %>
-        <%= yield :title %> - Publishing Platform
-      <% else %>
-        <%= @content_item.page_title %> - Publishing Platform
-      <% end %>
-    </title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<%= render "publishing_platform_publishing_components/components/layout", {
+  title: "#{yield(:title).presence || @content_item.page_title} - Publishing Platform"
+} do %>
 
-    <%= stylesheet_link_tag "application" %>    
-  </head>  
-  <body>      
-    <div class="container py-3">
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
-          <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
-            <span class="fs-4">Publishing Platform</span>
-          </a>
-        </div>   
-      </header>
-    
-      <main>         
-        <div class="row">
-          <div class="col-xs-12 col-md-8">
-            <%= yield %>
-          </div>          
-        </div>              
-      </main>
-    </div>  
-    <%= javascript_include_tag "application" %>      
-  </body>
-</html>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <%= yield %>
+    </div>          
+  </div>
+
+<% end %>
 
