@@ -98,7 +98,7 @@ GEM
     crack (1.0.1)
       bigdecimal
       rexml
-    crass (1.0.6)
+    crass (1.0.7)
     dartsass-rails (0.5.1)
       railties (>= 6.0.0)
       sass-embedded (~> 1.63)
@@ -176,20 +176,17 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.7.5)
-    nokogiri (1.19.3-x86_64-linux-gnu)
+    nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
     null_logger (0.0.1)
     parallel (2.1.0)
     parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
-    pp (0.6.3)
+    pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
     prism (1.9.0)
-    psych (5.4.0)
-      date
-      stringio
     public_suffix (7.0.5)
     publishing_platform_api_adapters (0.14.5)
       addressable (~> 2.8)
@@ -197,7 +194,7 @@ GEM
       null_logger
       publishing_platform_location (~> 0.3)
       rest-client (~> 2.0)
-    publishing_platform_app_config (0.5.2)
+    publishing_platform_app_config (0.5.3)
       puma (>= 5.6, < 8.0)
       sentry-rails (>= 5.3, < 7.0)
       sentry-ruby (~> 5.3)
@@ -268,9 +265,14 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.4.2)
-    rdoc (7.2.0)
+    rbs (4.0.3)
+      logger
+      prism (>= 1.6.0)
+      tsort
+    rdoc (8.0.0)
       erb
-      psych (>= 4.0.0)
+      prism (>= 1.6.0)
+      rbs (>= 4.0.0)
       tsort
     regexp_parser (2.12.0)
     reline (0.6.3)
@@ -364,7 +366,6 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    stringio (3.2.0)
     strscan (3.1.8)
     terser (1.2.8)
       execjs (>= 0.3.0, < 3)
