@@ -187,7 +187,7 @@ GEM
     prettyprint (0.2.0)
     prism (1.9.0)
     public_suffix (7.0.5)
-    publishing_platform_api_adapters (0.14.5)
+    publishing_platform_api_adapters (0.14.7)
       addressable (~> 2.8)
       link_header
       null_logger
@@ -197,7 +197,7 @@ GEM
       puma (>= 5.6, < 8.0)
       sentry-rails (>= 5.3, < 7.0)
       sentry-ruby (~> 5.3)
-    publishing_platform_location (0.4.7)
+    publishing_platform_location (0.4.8)
     publishing_platform_markdown (0.3.5)
       kramdown (>= 2.3.1, < 2.5.3)
       sanitize (>= 6, < 8)
